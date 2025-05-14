@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Nigerian Youth Assembly for National Development (NYAN)</title>
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+  <!-- Animation -->
+  <link rel="stylesheet" href="plugins/animate-css/animate.css">
+  <!-- slick Carousel -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <!-- Colorbox -->
+  <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
+  <!-- Form styles-->
+  <link rel="stylesheet" href="css/forms.css">
+  <!-- Newsletter styles-->
+  <link rel="stylesheet" href="css/newsletter.css">
+  <!-- Template styles-->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Custom animations -->
+  <link rel="stylesheet" href="css/animations.css">
+  
+  <style>
+    .hero-container {
+      background: whitesmoke;
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #087418;
+      margin-bottom: 50px;
+    }
+    
+    .hero-hd-title {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .hero-shd-title {
+      font-size: 18px;
+    }
+    
+    .hero-shd-title a {
+      color: #ffb600;
+    }
+    
+    .about-section {
+      padding: 80px 0;
+    }
+    
+    .about-section h2 {
+      position: relative;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+    }
+    
+    .about-section h2:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #087418;
+    }
+    
+    .vision-mission-box {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+      height: 100%;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .vision-mission-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .vision-mission-box h3 {
+      color: #087418;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    .vision-mission-box i {
+      font-size: 40px;
+      color: #087418;
+      margin-bottom: 20px;
+    }
+    
+    .timeline {
+      position: relative;
+      padding: 40px 0;
+    }
+    
+    .timeline:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 3px;
+      background-color: #087418;
+      transform: translateX(-50%);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+    
+    .timeline-content {
+      position: relative;
+      width: 45%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content {
+      margin-left: auto;
+    }
+    
+    .timeline-content:before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      background-color: #087418;
+      border-radius: 50%;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content:before {
+      left: -30px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content:before {
+      right: -30px;
+    }
+    
+    .timeline-year {
+      position: absolute;
+      top: 12px;
+      font-weight: bold;
+      color: #087418;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-year {
+      left: -80px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-year {
+      right: -80px;
+    }
+    
+    .team-member {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .team-member img {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 5px solid #f8f9fa;
+      transition: all 0.3s ease;
+    }
+    
+    .team-member:hover img {
+      border-color: #087418;
+    }
+    
+    .team-member h4 {
+      margin-bottom: 5px;
+      color: #333;
+    }
+    
+    .team-member p {
+      color: #087418;
+      font-weight: 600;
+    }
+    
+    .team-member .social-icons {
+      margin-top: 15px;
+    }
+    
+    .team-member .social-icons a {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      background-color: #f8f9fa;
+      color: #333;
+      border-radius: 50%;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .team-member .social-icons a:hover {
+      background-color: #087418;
+      color: #fff;
+    }
+    
+    .constitution-box {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 30px;
+      margin-top: 50px;
+      position: relative;
+    }
+    
+    .constitution-box:before {
+      content: '';
+      position: absolute;
+      top: -25px;
+      left: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: #087418;
+      border-radius: 10px;
+      transform: rotate(45deg);
+      z-index: -1;
+    }
+    
+    .constitution-box h3 {
+      color: #087418;
+      margin-bottom: 20px;
+    }
+    
+    .constitution-box .btn {
+      background-color: #087418;
+      color: #fff;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .constitution-box .btn:hover {
+      background-color: #065812;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .timeline:before {
+        left: 30px;
+      }
+      
+      .timeline-content {
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-content:before,
+      .timeline-item:nth-child(even) .timeline-content:before {
+        left: -30px;
+        right: auto;
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-year,
+      .timeline-item:nth-child(even) .timeline-year {
+        left: -20px;
+        right: auto;
+        top: -30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Body inner start -->
+  <div class="body-inner">
+    <div id="top-bar" class="top-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8">
+            <ul class="top-info text-center text-md-left">
+              <li>
+                <i class="fas fa-phone"></i>
+                <p class="info-text">
+                  (+234)-810-480-9910 | (+234)-813-101-7099
+                </p>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <p class="info-text">NyanSecretariatng@gmail.com</p>
+              </li>
+            </ul>
+          </div>
+          <!--/ Top info end -->
+
+          <div class="col-lg-4 col-md-4 top-social text-center text-md-right">
+            <ul class="list-unstyled">
+              <li>
+                <a title="Facebook" href="https://www.facebook.com/share/1EZDgP2woy/?mibextid=qi2Omg">
+                  <span class="social-icon"><i class="fab fa-facebook-f"></i></span>
+                </a>
+                <a title="Twitter" href="https://x.com/Nyan_Nigeria?t=Yc-KOd2ZhUYNLzrXkrYcnQ&s=09">
+                  <span class="social-icon"><i class="fab fa-twitter"></i></span>
+                </a>
+                <a title="Instagram" href="https://www.instagram.com/nyan_nigeria/">
+                  <span class="social-icon"><i class="fab fa-instagram"></i></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!--/ Top social end -->
+        </div>
+        <!--/ Content row end -->
+      </div>
+      <!--/ Container end -->
+    </div>
+    <!--/ Topbar end -->
+
+    <!----------------------- Header start --------------------->
+    <header id="header" class="header-two">
+      <div class="site-navigation">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg navbar-light p-0">
+                <div class="logo">
+                  <a class="d-block" href="index.html">
+                    <img loading="lazy" src="images/logo.png" alt="NYAN" />
+                  </a>
+                </div>
+                <!-- logo end -->
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                  data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false"
+                  aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="navbar-collapse" class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav ml-auto align-items-center">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Executives <i
+                          class="fa fa-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="national-executives.html">National Executives</a></li>
+                        <li><a href="state-assembly.html">State Assembly</a></li>
+                        <li><a href="past-national-speakers.html">Past National Speakers</a></li>
+                      </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Management Team <i
+                          class="fa fa-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="zonal-coordinators.html">Zonal Coordinators</a></li>
+                        <li>
+                          <a href="directorates.html">Directorates</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programs <i
+                          class="fa fa-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a href="leadership-workshop.html">Leadership Workshop</a>
+                        </li>
+                        <li>
+                          <a href="community-engagement.html">Community Engagement</a>
+                        </li>
+                        <li>
+                          <a href="upcoming-events.html">Upcoming Events</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                      <a
+                        href="#"
+                        class="nav-link dropdown-toggle"
+                        data-toggle="dropdown"
+                        >News & Media <i class="fa fa-angle-down"></i
+                      ></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="news-right-sidebar.html">News</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                      </ul>
+                    </li>
+          
+                    <li class="nav-item">
+                      <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+
+                    <li class="header-get-a-quote">
+                        <a class="btn btn-primary" href="become-a-member.html">Become a Member</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+            <!--/ Col end -->
+          </div>
+          <!--/ Row end -->
+        </div>
+        <!--/ Container end -->
+      </div>
+      <!--/ Navigation end -->
+    </header>
+    <!--/ Header end -->
+
+    <!-------------------------------------- Hero Section ------------------------------------------>
+    <div class="hero-container">
+      <h2 class="hero-hd-title">ABOUT US</h2>
+      <p class="hero-shd-title"><a href="index.html">Home</a>/About Us</p>
+    </div>
+    <!-------------------------------------- Hero Section end -------------------------------------->
+
+    <section class="about-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>Who We Are</h2>
+            <p>The National Youth Assembly of Nigeria (NYAN) was founded by a group of patriotic, vibrant, charismatic and professional Nigerian youths who believe in the Nigerian state and are committed to making Nigeria the country of our dream through active youth engagement and positive participation.</p>
+            <p>NYAN works in collaboration with the Ministry of Youth, and other relevant stakeholders in the Nigerian youth Agenda, particularly those engaged in the implementation of the Nigerian National youth policy.</p>
+            <p>Our motto "Youth Voices For Positive Action" and our slogan "Great NYAN! ...Response...My Voice, My power!" embody our commitment to empowering Nigerian youth to participate actively in nation-building.</p>
+            <p>NYAN is open to every Citizen of Nigeria irrespective of their religious, ethnic, regional, gender, social, economic or political status, provided they are decent and patriotic citizens within the age range of 18 to 39 years as stipulated by the Nigerian National youth policy.</p>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-image">
+              <img src="images/nyan-group-pic.JPG" alt="About NYAN" class="img-fluid rounded">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center mb-5">
+            <h2 class="section-title">Our Vision & Mission</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="vision-mission-box text-center">
+              <i class="fas fa-eye"></i>
+              <h3>Our Vision</h3>
+              <p>Nigeria where the youth attain their full potentials</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="vision-mission-box text-center">
+              <i class="fas fa-bullseye"></i>
+              <h3>Our Mission</h3>
+              <p>To serve as a viable platform for the expression of the utmost desires of Nigerian Youth</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center mb-5">
+            <h2 class="section-title">Our Objectives</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="ts-service-box">
+              <div class="ts-service-box-img">
+                <img src="images/icon-image/youth-advocacy.png" alt="Youth Voice">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title">YOUTH VOICE</h3>
+                <p>To serve as a formidable voice for Nigerian youth, and be a galvanizing force for youth action on issues of sustainable development and Nation building</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="ts-service-box">
+              <div class="ts-service-box-img">
+                <img src="images/icon-image/unity-national-development.png" alt="Youth Coordination">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title">YOUTH COORDINATION</h3>
+                <p>To coordinate and network Nigerian youth and youth groups particularly community based youth organizations (CBOs) and smaller grassroots groups for the advancement of Nigerian youth</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="ts-service-box">
+              <div class="ts-service-box-img">
+                <img src="images/icon-image/youth-empowerment.png" alt="Entrepreneurship">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title">ENTREPRENEURSHIP</h3>
+                <p>To promote youth entrepreneurship and engage in viable partnerships for the attainment of our objectives</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="ts-service-box">
+              <div class="ts-service-box-img">
+                <img src="images/icon-image/innovation-creativity.png" alt="Information Sharing">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title">INFORMATION SHARING</h3>
+                <p>Sourcing for and dissemination of vital information about opportunities that Nigerian youth can benefit from</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="ts-service-box">
+              <div class="ts-service-box-img">
+                <img src="images/icon-image/projects.png" alt="Capacity Building">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title">CAPACITY BUILDING</h3>
+                <p>Organize capacity building lectures, seminars, workshops and other youth engagement fora for members and other Nigerian youth</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="ts-service-box">
+              <div class="ts-service-box-img">
+                <img src="images/icon-image/good-governance.png" alt="Good Citizenship">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title">GOOD CITIZENSHIP</h3>
+                <p>To promote patriotism, youth participation, good governance and responsible citizenship as well as sexual and reproductive health</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center mb-5">
+            <h2 class="section-title">Our Constitution</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="constitution-box">
+              <h3>NYAN Constitution</h3>
+              <p>The NYAN constitution is supreme and its provisions shall be binding on all members of the National Youth Assembly of Nigeria (NYAN) at all levels. Our constitution outlines our governance structure, membership requirements, and operational guidelines.</p>
+              <p>The preamble states: "We the founding members of NYAN as productive youths of the federal republic of Nigeria, both at home and abroad having firmly and solemnly resolved to live and Associate in unity and harmony as a youth led and focused voice platform dedicated to the promotion of active citizenship, Positive engagement, National and international Solidarity, world peace, international co-operation and understanding particularly amongst youth."</p>
+              <a href="files/NYAN-constitution.pdf" class="btn btn-primary mt-3">Download Constitution</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center mb-5">
+            <h2 class="section-title">Membership</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <h3>Who Can Join NYAN?</h3>
+            <p>Membership of the assembly shall be open to every Citizen of Nigeria irrespective of his/her religious, ethnic, regional, gender, social, economic or political status, provided that:</p>
+            <ul class="list-arrow">
+              <li>The person must be a decent and patriotic citizen of Nigeria within the age range of 18 to 39 years as stipulated by the Nigerian National youth policy</li>
+              <li>He/She accepts the aims, objectives, principles, ideology, fundamental values, polices and programmes of the assembly</li>
+              <li>Qualifies for either honorary or life membership</li>
+              <li>Each member shall pay the prescribed annual fee to enjoy all rights and privileges at the National sitting</li>
+            </ul>
+            <p>The National Assembly is made up of 109 Ambassadors (representing the 36 states and FCT) and the Clerk of the Assembly who shall be nominated by the Speaker and approved by the national assembly members.</p>
+          </div>
+          <div class="col-lg-6">
+            <h3>Types of Membership</h3>
+            <div class="accordion accordion-group" id="membership-accordion">
+              <div class="card">
+                <div class="card-header p-0 bg-transparent" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Regular Membership
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#membership-accordion">
+                  <div class="card-body">
+                    Regular membership is open to all Nigerian citizens aged 18-39 who accept the aims and objectives of NYAN.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header p-0 bg-transparent" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Life Membership
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#membership-accordion">
+                  <div class="card-body">
+                    Life membership shall be conferred on those members of NYAN that have distinguished themselves, with dedication to NYAN WITHOUT BAD RECORDS. Such members must have exceeded the youthful age recognized herein and must have served as registered members at any given point.
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header p-0 bg-transparent" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Honorary Membership
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#membership-accordion">
+                  <div class="card-body">
+                    Honorary membership shall be conferred on deserving and patriotic citizens of Nigeria who believes in the aims, objectives, ideology, fundamental values, polices and programmes of the assembly.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <a href="become-a-member.html" class="btn btn-primary">Apply for Membership</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="call-to-action-box no-padding">
+      <div class="container">
+        <div class="action-style-box">
+          <div class="row align-items-center">
+            <div class="col-md-8 text-center text-md-left">
+              <div class="call-to-action-text">
+                <h3 class="action-title">Ready to join our mission?</h3>
+              </div>
+            </div><!-- Col end -->
+            <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
+              <div class="call-to-action-btn">
+                <a class="btn btn-dark" href="become-a-member.html">Become a Member</a>
+              </div>
+            </div><!-- col end -->
+          </div><!-- row end -->
+        </div><!-- Action style box -->
+      </div><!-- Container end -->
+    </section><!-- Action end -->
+
+    <!-----------------------------Footer Start Here ---------------------------------------->
+    <footer id="footer" class="footer bg-overlay">
+      <div class="footer-main">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-lg-4 col-md-6 footer-widget footer-about">
+              <h3 class="widget-title" style="text-align: left;">National Youth Assembly of Nigeria</h3>
+              <img
+                loading="lazy"
+                class="footer-logo"
+                src="images/logo.png"
+                alt="NYAN Logo"
+              />
+              <p style="text-align: justify; font-size: 16px;">
+                The National Youth Assembly of Nigeria (NYAN) is an independent, youth-centric organization with over a decade of service, acting as a legislative voice for Nigerian youth. It fosters awareness on governance, entrepreneurship, and innovation, empowering youth and women to drive unity and national development.
+              </p>
+              <div class="footer-social">
+                <ul>
+                  <li>
+                    <a
+                      href="https://www.facebook.com/share/1EZDgP2woy/?mibextid=qi2Omg"
+                      aria-label="Facebook"
+                      ><i class="fab fa-facebook-f"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://x.com/Nyan_Nigeria?t=Yc-KOd2ZhUYNLzrXkrYcnQ&s=09"
+                      aria-label="Twitter"
+                      ><i class="fab fa-twitter"></i
+                    ></a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com/nyan_nigeria/"
+                      aria-label="Instagram"
+                      ><i class="fab fa-instagram"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Footer social end -->
+            </div>
+            <!-- Col end -->
+
+            <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+              <h3 class="widget-title">Working Hours</h3>
+              <div class="working-hours">
+                We are available 7 days a week, except on major holidays.
+                For urgent matters, reach out via our hotline or contact form.
+                <br /><br />
+                Monday - Friday:
+                <span class="text-right">09:00 - 17:00 </span> <br />
+                Saturday: <span class="text-right">11:00 - 15:00</span> <br />
+                Sunday and holidays:
+                <span class="text-right">11:00 - 14:00</span>
+              </div>
+            </div>
+            <!-- Col end -->
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+              <h3 class="widget-title">Quick Links</h3>
+              <ul class="list-arrow">
+                <li><a href="upcoming-events.html">Upcoming Events</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="news.html">News & Blog Update</a></li>
+                <li><a href="become-a-member.html">Become a Member</a></li>
+              </ul>
+            </div>
+            <!-- Col end -->
+          </div>
+          <!-- Row end -->
+        </div>
+        <!-- Container end -->
+      </div>
+      <!-- Footer main end -->
+
+      <div class="copyright">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <div class="copyright-info text-center">
+                <span
+                  >Copyright &copy;
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  | Designed &amp; Developed by
+                  <a href="https://www.linkedin.com/in/habeeb-oluwafemi-0b1999bb/">Digital_Civitas</a></span
+                >
+              </div>
+            </div>
+          <!-- Row end -->
+
+          <div
+            id="back-to-top"
+            data-spy="affix"
+            data-offset-top="10"
+            class="back-to-top position-fixed"
+          >
+            <button class="btn btn-primary" title="Back to Top">
+              <i class="fa fa-angle-double-up"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Container end -->
+      </div>
+      <!-- Copyright end -->
+       <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const footer = document.querySelector(".footer");
+
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("show");
+                        }
+                    });
+                },
+                { threshold: 0.2 } // Trigger when 20% of the footer is visible
+            );
+
+            if (footer) observer.observe(footer);
+        });
+       </script>
+    </footer>
+    <!-- Footer end -->
+
+    <!-- Javascript Files
+    ================================================== -->
+    <!-- Aggressive Script to Remove Branding -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const section = document.querySelector(".hero-container");
+          const h2 = document.querySelector(".hero-hd-title");
+          const p = document.querySelector(".hero-shd-title");
+
+          const observer = new IntersectionObserver(
+              (entries) => {
+                  entries.forEach((entry) => {
+                      if (entry.isIntersecting) {
+                          section.classList.add("show");
+                          h2.classList.add("show");
+                          p.classList.add("show");
+                      }
+                  });
+              },
+              { threshold: 0.3 } // Trigger when 30% of the section is visible
+          );
+
+          observer.observe(section);
+      });
+    </script>
+
+    <!-- initialize jQuery Library -->
+    <script src="plugins/jQuery/jquery.min.js"></script>
+    <!-- Bootstrap jQuery -->
+    <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
+    <!-- Slick Carousel -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <script src="plugins/slick/slick-animation.min.js"></script>
+    <!-- Color box -->
+    <script src="plugins/colorbox/jquery.colorbox.js"></script>
+    <!-- shuffle -->
+    <script src="plugins/shuffle/shuffle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
+    </script>
+
+    <!-- Google Map API Key-->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU"
+      defer
+    ></script>
+    <!-- Google Map Plugin-->
+    <script src="plugins/google-map/map.js" defer></script>
+
+    <!-- Template custom -->
+    <script src="js/script.js"></script>
+  </div>
+  <!-- Body inner end -->
+</body>
+</html>

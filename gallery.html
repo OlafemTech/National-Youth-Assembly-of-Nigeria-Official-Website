@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Page Needs
+================================================== -->
+    <meta charset="utf-8" />
+    <title>Gallery - Nigerian Youth Assembly for National Development (NYAN)</title>
+
+    <!-- Mobile Specific Metas
+================================================== -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Explore NYAN's comprehensive gallery showcasing youth leadership activities, community outreach programs, and impactful events across Nigeria. See how the Nigerian Youth Assembly for National Development is empowering young leaders and transforming communities." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="NYAN gallery, Nigerian Youth Assembly photos, youth development Nigeria gallery, NYAN events photos, Nigerian youth organization gallery, NYAN activities, youth leadership Nigeria photos, community engagement photos Nigeria" />
+    <meta name="author" content="DigiTech Solutions" />
+    <meta property="og:title" content="Gallery - Nigerian Youth Assembly for National Development (NYAN)" />
+    <meta property="og:description" content="Explore NYAN's comprehensive gallery showcasing youth leadership activities, community outreach programs, and impactful events across Nigeria." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nyan.org.ng/gallery.html" />
+    <meta property="og:image" content="https://nyan.org.ng/images/logo.png" />
+    <meta property="og:site_name" content="Nigerian Youth Assembly for National Development" />
+    <meta property="og:locale" content="en_NG" />
+    <link rel="canonical" href="https://nyan.org.ng/gallery.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicon
+================================================== -->
+    <link rel="icon" type="image/png" href="images/favicon.jpg" />
+
+    <!-- CSS
+================================================== -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css" />
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css" />
+    <!-- Animation -->
+    <link rel="stylesheet" href="plugins/animate-css/animate.css" />
+    <!-- slick Carousel -->
+    <link rel="stylesheet" href="plugins/slick/slick.css" />
+    <link rel="stylesheet" href="plugins/slick/slick-theme.css" />
+    <!-- Colorbox -->
+    <link rel="stylesheet" href="plugins/colorbox/colorbox.css" />
+    <!-- Template styles-->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        .hero-container {
+            background: whitesmoke;
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #087418;
+            margin-bottom: 50px;
+        }
+
+        .hero-hd-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-shd-title {
+            font-size: 18px;
+        }
+
+        .hero-shd-title a {
+            color: #ffb600;
+        }
+
+        .gallery-container {
+            padding: 0 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(8, 116, 24, 0.7);
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .gallery-item .overlay h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: white;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            opacity: 0;
+        }
+
+        .gallery-item:hover .overlay h3 {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .gallery-item .overlay p {
+            font-size: 14px;
+            transform: translateY(20px);
+            transition: all 0.4s ease 0.1s;
+            opacity: 0;
+        }
+
+        .gallery-item:hover .overlay p {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .gallery-item .overlay .view-btn {
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: #ffb600;
+            color: #333;
+            border-radius: 30px;
+            font-weight: 600;
+            transform: translateY(20px);
+            transition: all 0.4s ease 0.2s;
+            opacity: 0;
+            text-decoration: none;
+        }
+
+        .gallery-item:hover .overlay .view-btn {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .gallery-item .overlay .view-btn:hover {
+            background: white;
+            color: #087418;
+        }
+
+        .gallery-filter {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .gallery-filter button {
+            background: none;
+            border: 2px solid #087418;
+            color: #087418;
+            padding: 8px 20px;
+            margin: 0 5px 10px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-filter button:hover,
+        .gallery-filter button.active {
+            background: #087418;
+            color: white;
+        }
+
+        .lightbox-gallery {
+            display: none;
+        }
+
+        .category-title {
+            margin-top: 60px;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .category-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #087418;
+        }
+
+        /* Lightbox styling */
+        .baguetteBox-button {
+            background-color: rgba(8, 116, 24, 0.8) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body-inner">
+        <div id="top-bar" class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8">
+                        <ul class="top-info text-center text-md-left">
+                            <li>
+                                <i class="fas fa-phone"></i>
+                                <p class="info-text">
+                                    (+234)-810-480-9910 | (+234)-813-101-7099
+                                </p>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <p class="info-text">NyanSecretariatng@gmail.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/ Top info end -->
+
+                    <div class="col-lg-4 col-md-4 top-social text-center text-md-right">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a title="Facebook" href="https://www.facebook.com/share/1EZDgP2woy/?mibextid=qi2Omg">
+                                    <span class="social-icon"><i class="fab fa-facebook-f"></i></span>
+                                </a>
+                                <a title="Twitter" href="https://x.com/Nyan_Nigeria?t=Yc-KOd2ZhUYNLzrXkrYcnQ&s=09">
+                                    <span class="social-icon"><i class="fab fa-twitter"></i></span>
+                                </a>
+                                <a title="Instagram" href="https://www.instagram.com/nyan_nigeria/">
+                                    <span class="social-icon"><i class="fab fa-instagram"></i></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/ Top social end -->
+                </div>
+                <!--/ Content row end -->
+            </div>
+            <!--/ Container end -->
+        </div>
+        <!--/ Topbar end -->
+
+        <!----------------------- Header start --------------------->
+        <header id="header" class="header-two">
+            <div class="site-navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <nav class="navbar navbar-expand-lg navbar-light p-0">
+                                <div class="logo">
+                                    <a class="d-block" href="index.html">
+                                        <img loading="lazy" src="images/logo.png" alt="NYAN" />
+                                    </a>
+                                </div>
+                                <!-- logo end -->
+
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+
+                                <div id="navbar-collapse" class="collapse navbar-collapse">
+                                    <ul class="nav navbar-nav ml-auto align-items-center">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="index.html">Home</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="about.html">About</a>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Executives <i
+                                                    class="fa fa-angle-down"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="national-executives.html">National Executives</a></li>
+                                                <li><a href="state-assembly.html">State Assembly</a></li>
+                                                <li><a href="past-national-speakers.html">Past National Speakers</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Management Team <i
+                                                    class="fa fa-angle-down"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="zonal-coordinators.html">Zonal Coordinators</a></li>
+                                                <li>
+                                                    <a href="directorates.html">Directorates</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programs <i
+                                                    class="fa fa-angle-down"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li>
+                                                    <a href="leadership-workshop.html">Leadership Workshop</a>
+                                                </li>
+                                                <li>
+                                                    <a href="community-engagement.html">Community Engagement</a>
+                                                </li>
+                                                <li>
+                                                    <a href="upcoming-events.html">Upcoming Events</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="nav-item dropdown active">
+                                            <a
+                                              href="#"
+                                              class="nav-link dropdown-toggle"
+                                              data-toggle="dropdown"
+                                              >News & Media <i class="fa fa-angle-down"></i
+                                            ></a>
+                                            <ul class="dropdown-menu">
+                                              <li><a href="news-right-sidebar.html">News</a></li>
+                                              <li class="active"><a href="gallery.html">Gallery</a></li>
+                                            </ul>
+                                          </li>
+                
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="contact.html" style="color: #087418">Contact</a>
+                                        </li>
+
+                                        <li class="header-get-a-quote">
+                                            <a class="btn btn-primary" href="become-a-member.html">Become a Member</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <!--/ Col end -->
+                    </div>
+                    <!--/ Row end -->
+                </div>
+                <!--/ Container end -->
+            </div>
+            <!--/ Navigation end -->
+        </header>
+        <!--/ Header end -->
+
+        <!-------------------------------------- Hero Section -------------------------------------------->
+        <div class="hero-container">
+            <h2 class="hero-hd-title">GALLERY</h2>
+            <p class="hero-shd-title"><a href="index.html">Home</a>/Gallery</p>
+        </div>
+        <!-------------------------------------- Hero Section end -------------------------------------->
+
+        <!-- Gallery Section -->
+        <section id="main-container" class="main-container">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col-12">
+                        <h2 class="section-title">Our Photo Gallery</h2>
+                        <h3 class="section-sub-title">Capturing Our Journey</h3>
+                        <p class="section-intro">Explore our gallery showcasing NYAN's activities, events, and impact across Nigeria. These images tell the story of our commitment to youth empowerment and national development.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="events">Events</button>
+                    <button class="filter-btn" data-filter="workshops">Workshops</button>
+                    <button class="filter-btn" data-filter="community">Community Outreach</button>
+                    <button class="filter-btn" data-filter="leadership">Leadership</button>
+                </div>
+
+                <div class="gallery-container">
+                    <div class="row">
+                        <!-- Events Category -->
+                        <div class="col-lg-4 col-md-6 gallery-item events">
+                            <a href="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" class="lightbox">
+                                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="NYAN National Conference 2024">
+                                <div class="overlay">
+                                    <h3>NYAN National Conference 2024</h3>
+                                    <p>Annual gathering of youth leaders from across Nigeria discussing national development strategies</p>
+                                    <span class="view-btn">View Larger</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 gallery-item events">
+                            <a href="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="lightbox">
+                                <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Youth Summit 2024">
+                                <div class="overlay">
+                                    <h3>Youth Summit 2024</h3>
+                                    <p>Bringing together young leaders to discuss challenges and opportunities for Nigerian youth</p>
+                                    <span class="view-btn">View Larger</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 gallery-item events">
+                            <a href="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="lightbox">
+                                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="NYAN National Retreat 2025">
+                                <div class="overlay">
+                                    <h3>NYAN National Retreat 2025</h3>
+                                    <p>Strategic planning session for NYAN leadership to set goals for the upcoming year</p>
+                                    <span class="view-btn">View Larger</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Workshops Category -->
+                        <div class="col-lg-4 col-md-6 gallery-item workshops">
+                            <a href="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="lightbox">
+                                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Leadership Skills Workshop">
+                                <div class="overlay">
+                                    <h3>Leadership Skills Workshop</h3>
+                                    <p>Intensive training session on leadership skills for emerging youth leaders</p>
+                                    <span class="view-btn">View Larger</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 gallery-item workshops">
+                            <a href="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="lightbox">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Public Speaking Workshop">
+                                <div class="overlay">
+                                    <h3>Public Speaking Workshop</h3>
+                                    <p>Training young Nigerians on effective communication and public speaking skills</p>
+                                    <span class="view-btn">View Larger</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 gallery-item workshops">
+                            <a href="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="lightbox">
+                                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Digital Skills Workshop">
+                                <div class="overlay">
+                                    <h3>Digital Skills Workshop</h3>
+                                    <p>Equipping Nigerian youth with essential digital skills for the 21st century</p>
+                                    <span class="view-btn">View Larger</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Community Outreach Category -->
+                        <div class="col-lg-4 col-md-6 gallery-item community">
+                            <a href="https://images.unsplash.com/photo-1593113598332-cd59a93f9dd4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="lightbox">
+                                <img src="https://images.unsplash.com/photo-1593113598332-cd59a93f9dd4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Community Health Outreach">
+                                <div class="overlay">
+                                    <h3>Community Health Outreach</h3>
+                                    <p>Providing free health services to underserved communities in rural Nigeria</p>
+                                    <span class="view-btn">View Larger</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 gallery-item community">
+                            <a href="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="lightbox">
+                                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Educational Support Program">
+                                <div class="overlay">
+                                    <h3>Educational Support Program</h3>
+                                    <p>Distributing educational materials to schools in disadvantaged areas</p>
+                                    <span class="view-btn">View Larger</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 gallery-item community">
+                            <a href="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="lightbox">
+                                <img src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Environmental Clean-up">
+                                <div class="overlay">
+                                    <h3>Environmental Clean-up</h3>
+                                    <p>NYAN members leading community clean-up efforts to promote environmental sustainability</p>
+                                    <span class="view-btn">View Larger</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Leadership Category -->
+                        <div class="col-lg-4 col-md-6 gallery-item leadership">
+                            <a href="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="lightbox">
+                                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Executive Board Meeting">
+                                <div class="overlay">
+                                    <h3>Executive Board Meeting</h3>
+                                    <p>NYAN's executive board discussing strategic initiatives for youth development</p>
+                                    <span class="view-btn">View Larger</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 gallery-item leadership">
+                            <a href="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="lightbox">
+                                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="National Speaker Address">
+                                <div class="overlay">
+                                    <h3>National Speaker Address</h3>
+                                    <p>NYAN's National Speaker delivering an address on youth empowerment</p>
+                                    <span class="view-btn">View Larger</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 gallery-item leadership">
+                            <a href="https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="lightbox">
+                                <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Youth Leadership Conference">
+                                <div class="overlay">
+                                    <h3>Youth Leadership Conference</h3>
+                                    <p>NYAN's annual youth leadership conference fostering leadership development and skills training</p>
+                                    <span class="view-btn">View Larger</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 gallery-item leadership">
+                            <a href="https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="lightbox">
+                                <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Government Partnership Meeting">
+                                <div class="overlay">
+                                    <h3>Government Partnership Meeting</h3>
+                                    <p>NYAN leadership meeting with government officials to discuss youth policies</p>
+                                    <span class="view-btn">View Larger</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                            </div><!-- Container end -->
+                        </section><!-- Main container end -->
+                
+                        <footer id="footer" class="footer bg-overlay">
+                            <div class="footer-main">
+                                <div class="container">
+                                    <div class="row justify-content-between">
+                                        <div class="col-lg-4 col-md-6 footer-widget footer-about">
+                                            <h3 class="widget-title">About Us</h3>
+                                            <img loading="lazy" class="footer-logo" src="images/logo.png" alt="NYAN">
+                                            <p>The Nigerian Youth Assembly for National Development (NYAN) is a non-partisan organization dedicated to empowering Nigerian youth through leadership development, community engagement, and civic education.</p>
+                                            <div class="footer-social">
+                                                <ul>
+                                                    <li><a href="https://www.facebook.com/share/1EZDgP2woy/?mibextid=qi2Omg" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                                    <li><a href="https://x.com/Nyan_Nigeria?t=Yc-KOd2ZhUYNLzrXkrYcnQ&s=09" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                                    <li><a href="https://www.instagram.com/nyan_nigeria/" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                                </ul>
+                                            </div><!-- Footer social end -->
+                                        </div><!-- Col end -->
+                
+                                        <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+                                            <h3 class="widget-title">Working Hours</h3>
+                                            <div class="working-hours">
+                                                We are available 24/7 via email. Our physical office hours:
+                                                <br><br> Monday - Friday: <span class="text-right">9:00 AM - 5:00 PM </span>
+                                                <br> Saturday: <span class="text-right">9:00 AM - 1:00 PM</span>
+                                                <br> Sundays and Holidays: <span class="text-right">Closed</span>
+                                            </div>
+                                        </div><!-- Col end -->
+                
+                                        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+                                            <h3 class="widget-title">Quick Links</h3>
+                                            <ul class="list-arrow">
+                                                <li><a href="upcoming-events.html">Upcoming Events</a></li>
+                                                <li><a href="contact.html">Contact Us</a></li>
+                                                <li><a href="gallery.html">Gallery</a></li>
+                                                <li><a href="news.html">News & Blog Update</a></li>
+                                                <li><a href="membership.html">Become a Member</a></li>
+                                            </ul>
+                                        </div><!-- Col end -->
+                                    </div><!-- Row end -->
+                                </div><!-- Container end -->
+                            </div><!-- Footer main end -->
+                
+                            <div class="copyright">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-6">
+                                            <div class="copyright-info">
+                                                <span>Copyright &copy; <script>
+                                                        document.write(new Date().getFullYear())
+                                                    </script>, Nigerian Youth Assembly for National Development (NYAN)</span>
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-md-6">
+                                            <div class="footer-menu text-center text-md-right">
+                                                <ul class="list-unstyled mb-0">
+                                                    <li><a href="about.html">About</a></li>
+                                                    <li><a href="#">Terms of Service</a></li>
+                                                    <li><a href="#">Privacy Policy</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div><!-- Row end -->
+                
+                                    <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
+                                        <button class="btn btn-primary" title="Back to Top">
+                                            <i class="fa fa-angle-double-up"></i>
+                                        </button>
+                                    </div>
+                                </div><!-- Container end -->
+                            </div><!-- Copyright end -->
+                        </footer><!-- Footer end -->
+                                <!-- Javascript Files
+                                ================================================== -->
+                                <!-- initialize jQuery Library -->
+                                <script src="plugins/jQuery/jquery.min.js"></script>
+                                <!-- Bootstrap jQuery -->
+                                <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
+                                <!-- Slick Carousel -->
+                                <script src="plugins/slick/slick.min.js"></script>
+                                <script src="plugins/slick/slick-animation.min.js"></script>
+                                <!-- Color box -->
+                                <script src="plugins/colorbox/jquery.colorbox.js"></script>
+                                <!-- shuffle -->
+                                <script src="plugins/shuffle/shuffle.min.js" defer></script>
+                                <!-- BaguetteBox Lightbox -->
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+                        
+                                <!-- Template custom -->
+                                <script src="js/script.js"></script>
+                        
+                                <script>
+                                    // Initialize lightbox
+                                    window.addEventListener('load', function() {
+                                        baguetteBox.run('.gallery-container');
+                                    });
+                        
+                                    // Gallery filtering
+                                    document.addEventListener('DOMContentLoaded', function() {
+                                        const filterBtns = document.querySelectorAll('.filter-btn');
+                                        const galleryItems = document.querySelectorAll('.gallery-item');
+                        
+                                        // Add click event to filter buttons
+                                        filterBtns.forEach(btn => {
+                                            btn.addEventListener('click', function() {
+                                                // Remove active class from all buttons
+                                                filterBtns.forEach(btn => btn.classList.remove('active'));
+                                                
+                                                // Add active class to clicked button
+                                                this.classList.add('active');
+                                                
+                                                // Get filter value
+                                                const filterValue = this.getAttribute('data-filter');
+                                                
+                                                // Filter gallery items
+                                                galleryItems.forEach(item => {
+                                                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                                                        item.style.display = 'block';
+                                                        
+                                                        // Add animation
+                                                        setTimeout(() => {
+                                                            item.style.opacity = '1';
+                                                            item.style.transform = 'scale(1)';
+                                                        }, 50);
+                                                    } else {
+                                                        item.style.opacity = '0';
+                                                        item.style.transform = 'scale(0.8)';
+                                                        
+                                                        // Hide after animation
+                                                        setTimeout(() => {
+                                                            item.style.display = 'none';
+                                                        }, 300);
+                                                    }
+                                                });
+                                            });
+                                        });
+                                    });
+                                </script>
+                            </div><!-- Body inner end -->
+                        </body>
+                        </html>

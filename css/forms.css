@@ -1,0 +1,203 @@
+/**
+ * Form Styles
+ * 
+ * This file contains styles for contact and membership forms to replace inline styles.
+ */
+
+/* Form Success and Error Messages */
+.form-message {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    display: none;
+}
+
+.form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Form Field Validation */
+.form-field-error {
+    border-color: #dc3545 !important;
+}
+
+.field-error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* reCAPTCHA Container */
+.recaptcha-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.recaptcha-error {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+/* File Upload Styles */
+.file-upload-container {
+    margin-bottom: 20px;
+}
+
+.file-upload-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.file-upload-info {
+    font-size: 14px;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.file-preview {
+    max-width: 150px;
+    max-height: 150px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    display: none;
+}
+
+/* Form Section Styles */
+.form-section {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+/* Custom File Upload Styles */
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.custom-file-upload:hover {
+    background-color: #e9ecef;
+}
+
+.photo-preview {
+    width: 150px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-preview img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Required Field Indicator */
+.required-field::after {
+    content: "*";
+    color: #dc3545;
+    margin-left: 4px;
+}
+
+/* Form Submit Button Container */
+.form-submit-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Loading Spinner */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+    vertical-align: middle;
+    display: none;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Membership Benefits and Requirements */
+.membership-benefits {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.membership-benefits h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color: #222;
+}
+
+.membership-benefits ul {
+    padding-left: 20px;
+}
+
+.membership-benefits ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.membership-benefits.requirements {
+    background-color: #ffb600;
+    color: #333;
+}
+
+.membership-benefits.requirements h3 {
+    color: #333;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Form Styles */
+@media (max-width: 768px) {
+    .form-row [class*="col-"] {
+        margin-bottom: 15px;
+    }
+}

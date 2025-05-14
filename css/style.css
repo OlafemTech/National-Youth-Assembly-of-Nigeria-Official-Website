@@ -1367,12 +1367,12 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 
 .slider.border {
   background: #087418;
-  border: 2px solid #087418 !important;
+  border: 0.7px solid #087418 !important;
 }
 
 .slider.border:hover {
   background: #ffb600;
-  border: 2px solid #ffb600;
+  border: 0.7px solid #ffb600;
 }
 
 /* Carousel control */
@@ -1713,6 +1713,81 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 /* Services
 ================================================== */
 /* Service box */
+
+.ts-service-box .ts-service-image-wrapper {
+  position: relative;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 240px; /* Fixed height for image container */
+}
+
+.ts-service-box .ts-service-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover container */
+  object-position: center; /* Center the image */
+}
+
+.ts-service-box {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background: #fff;
+  height: 100%; /* Make all boxes take full height of their container */
+  display: flex;
+  flex-direction: column;
+}
+
+.ts-service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts-service-box:hover .service-overlay {
+  opacity: 1;
+}
+
+.service-overlay-content {
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.ts-service-box:hover .service-overlay-content {
+  transform: translateY(0);
+}
+
+.ts-service-info {
+  padding: 0 20px 20px;
+}
+
+.section-intro {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.ts-service-box .ts-service-box-content {
+  margin-left: 62px;
+  margin-bottom: 30px;
+}
+
 .ts-service-box .ts-service-icon i {
   font-size: 36px;
   float: left;
@@ -1763,57 +1838,6 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 .ts-service-box-bg h3 {
   color: #fff;
 }
-
-/* Service box 
-
-.ts-service-box .ts-service-icon i {
-  font-size: 24px;
-  float: left;
-  color: #fff;
-  background: $color-primary;
-  border-radius: 100%;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
-}
-
-.ts-service-box .ts-service-box-content {
-  margin-left: 80px;
-  margin-bottom: 30px;
-}
-
-.tab-content .ts-service-box .ts-service-box-content {
-  margin-left: 90px;
-}
-
-.ts-service-box .ts-service-box-content h3 {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.ts-service-box .ts-service-box-info {
-  margin-left: 90px;
-  margin-bottom: 40px;
-}
-
-.service-box-title {
-  font-size: 18px;
-  margin: 0 0 10px;
-}
-
-.service-box-title a {
-  color: #333;
-}
-
-.service-box-title a:hover {
-  color: $color-primary;
-}
-
-.service-center-img {
-  padding: 0 20px;
-}
-*/
 
 /* Icon squre */
 .ts-service-icon.icon-round i {
@@ -1912,9 +1936,63 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   background: #ffb600;
 }
 
+/* Initially hide elements */
+.ts-service-box {
+    opacity: 0;
+    transform: translateY(50px) rotate(0deg);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Swinging effect for icons */
+.ts-service-box .ts-service-icon {
+    opacity: 0;
+    transform: rotate(-15deg);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Swinging effect for content */
+.ts-service-box .ts-service-box-content {
+    opacity: 0;
+    transform: translateY(30px) rotate(0deg);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When section becomes visible */
+.ts-service-box.show {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+}
+
+/* Icon swings */
+.ts-service-box.show .ts-service-icon {
+    opacity: 1;
+    animation: swingIcon 1s ease-in-out;
+}
+
+/* Content sways */
+.ts-service-box.show .ts-service-box-content {
+    opacity: 1;
+    animation: swayContent 1s ease-in-out;
+}
+
+/* Keyframes for swinging effect */
+@keyframes swingIcon {
+    0% { transform: rotate(-15deg); }
+    50% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Keyframes for swaying effect */
+@keyframes swayContent {
+    0% { transform: translateY(30px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+
 /* Projects area
 ================================================== */
-/* Project filter nav */
+/* Project filter nav
 .shuffle-btn-group {
   display: inline-block;
   margin: 20px 0 50px;
@@ -1944,7 +2022,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   display: none;
 }
 
-/* Project shuffle Item */
+/* Project shuffle Item *
 .shuffle-item {
   padding: 0;
 }
@@ -2063,7 +2141,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   background: #000;
 }
 
-/* Project owl */
+/* Project owl *
 .owl-theme.project-slide {
   margin-top: 60px;
 }
@@ -2119,7 +2197,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
   left: auto;
 }
 
-/* Projects Single page */
+/* Projects Single page 
 .project-title {
   font-size: 30px;
 }
@@ -2140,7 +2218,7 @@ ul.navbar-nav > li.header-get-a-quote:hover > a:after {
 
 .project-link {
   margin-top: 15px;
-}
+} */
 
 /* Content area
 ================================================== */
@@ -2626,6 +2704,75 @@ img.testimonial-thumb {
   color: #fff;
 }
 
+/* --------------------- Footer Section: Rolling Animation ------------------------- */
+.footer {
+    background-color: #087418;
+    color: #087418
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* When footer becomes visible */
+.footer.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rolling-in effect for left and right columns */
+.footer-widget {
+    opacity: 0;
+    transform: translateX(-50px) rotate(-10deg);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Right-aligned widgets roll in from the right */
+.footer-social,
+.footer-menu {
+    opacity: 0;
+    transform: translateX(50px) rotate(10deg);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* When they appear in viewport */
+.footer.show .footer-widget {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+}
+
+.footer.show .footer-social,
+.footer.show .footer-menu {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+}
+
+/* Footer links hover effect */
+.footer-widget ul.list-arrow li a:hover,
+.footer-widget ul.list-arrow li:hover {
+    color: #ffb600;
+    transition: 0.3s ease-in-out;
+}
+
+/* Social icons hover effect */
+.footer-social ul li a i:hover {
+    color: #ffb600;
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+/* Copyright section fade-in */
+.copyright {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
+}
+
+.footer.show .copyright {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 /* Sub Pages
 ================================================== */
 /*-- Title border --*/
@@ -2814,49 +2961,46 @@ img.testimonial-thumb {
   }
 }
 
+/* Initially hide elements */
+.page-slider .box-slider-text,
+.page-slider .box-slide-title,
+.page-slider .box-slide-subtitle,
+.page-slider .box-slider-text p {
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Title flows in from the top */
+.page-slider .box-slide-title {
+    transform: translateY(-50px);
+}
+
+/* Subtitle flows in from the bottom */
+.page-slider .box-slide-subtitle {
+    transform: translateY(50px);
+}
+
+/* Text box fades in */
+.page-slider .box-slider-text {
+    transform: scale(0.9);
+}
+
+/* Paragraphs flow in from the left */
+.page-slider .box-slider-text p {
+    transform: translateX(-50px);
+}
+
+/* When section becomes visible */
+.page-slider.show .box-slider-text,
+.page-slider.show .box-slide-title,
+.page-slider.show .box-slide-subtitle,
+.page-slider.show .box-slider-text p {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+}
+
+
 /*------------ Mission/Vision Slider ends here-----------------------*/
-
-/*-- Get a quote page --*/
-.page-quote-form {
-  background: #f2f2f2;
-  padding: 30px 50px 50px;
-}
-
-.get-a-quote-img {
-  margin-bottom: -190px;
-}
-
-/*-- Partners carousel --*/
-.partner-logo {
-  border: 1px solid #eee;
-  padding: 20px;
-  margin-top: 40px;
-  margin-bottom: 10px;
-}
-
-.partner-logo img {
-  transition: 350ms;
-  opacity: 0.6;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
-
-.partner-logo:hover img {
-  opacity: 1;
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
-}
-
-#partners-carousel .partner-logo {
-  border: 0;
-  border-right: 1px solid #eee;
-  padding: 0 15px;
-  margin-top: 20px;
-}
-
-#partners-carousel .partner-logo.last {
-  border-right: 0;
-}
 
 /*-- Team page --*/
 .team-slide .slick-slide {
@@ -2989,69 +3133,6 @@ img.testimonial-thumb {
 
 .ts-team-content-classic .team-social-icons a i:hover {
   color: #ffb600;
-}
-
-/*-- Pricing table  --*/
-.ts-pricing-box {
-  margin: 20px 0;
-  padding: 0;
-  text-align: center;
-  background: #f9f9f9;
-}
-
-.ts-pricing-box .ts-pricing-header {
-  background: #252525;
-  color: #fff;
-  position: relative;
-  padding: 30px 20px;
-}
-
-.ts-pricing-box .ts-pricing-name {
-  font-size: 18px;
-  line-height: normal;
-  margin: 0 0 5px 0;
-  color: #fff;
-}
-
-.ts-pricing-box .ts-pricing-price {
-  font-size: 44px;
-  color: #fff;
-  margin: 15px 0 0;
-  display: inline-block;
-}
-
-.ts-pricing-box .ts-pricing-price > small {
-  font-size: 16px;
-  line-height: 16px;
-  display: block;
-  margin-top: 15px;
-  color: #fff;
-}
-
-.ts-pricing-box .ts-pricing-features {
-  padding: 15px 0;
-}
-
-.ts-pricing-box .ts-pricing-features ul {
-  padding: 0 20px;
-}
-
-.ts-pricing-box .ts-pricing-features ul > li {
-  padding: 20px 0;
-  border-top: 1px dotted #e5e5e5;
-}
-
-.ts-pricing-box .ts-pricing-features ul > li:first-child {
-  border-top: 0;
-}
-
-.ts-pricing-box .plan-action {
-  padding-bottom: 40px;
-}
-
-/* Pricing featured */
-.ts-pricing-box.ts-pricing-featured .ts-pricing-header {
-  background: #ff9800;
 }
 
 /* Contact Us
@@ -3582,79 +3663,6 @@ label {
   font-weight: 700;
 }
 
-/* # sourceMappingURL=style.css.map
-
-@media (max-width: 991px) {
-  .gallery-track {
-    display: flex;
-    animation: scrollGallery 20s linear infinite;
-    width: calc(250px * 12);
-  }
-
-  .gallery-item {
-    flex: 0 0 250px;
-    padding: 0 15px;
-    transition: transform 0.3s ease;
-  }
-
-  .sliding-gallery {
-    position: relative;
-    overflow: hidden;
-    padding: 20px 0;
-  }
-
-  @keyframes scrollGallery {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-250px * 6));
-    }
-  }
-
-  .gallery-track:hover {
-    animation-play-state: paused;
-  }
-}
-
-@media (max-width: 767px) {
-  .gallery-track {
-    width: calc(200px * 12);
-  }
-
-  .gallery-item {
-    flex: 0 0 200px;
-  }
-
-  @keyframes scrollGallery {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-200px * 6));
-    }
-  }
-}
-
-@media (max-width: 575px) {
-  .gallery-track {
-    width: calc(180px * 12);
-  }
-
-  .gallery-item {
-    flex: 0 0 180px;
-  }
-
-  @keyframes scrollGallery {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(calc(-180px * 6));
-    }
-  }
-}
-
 /*--------------------------------- Welcome Address Section --------------------------------*/
 .welcome-address {
   padding: 80px 0;
@@ -3816,6 +3824,51 @@ label {
   }
 }
 
+/* Initially hide elements */
+.welcome-card .speaker-image,
+.welcome-card .welcome-content,
+.welcome-badge,
+.welcome-content h2,
+.welcome-content p,
+.speaker-signature {
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Image flows in from the left */
+.welcome-card .speaker-image {
+    transform: translateX(-50px);
+}
+
+/* Content flows in from the right */
+.welcome-card .welcome-content {
+    transform: translateX(50px);
+}
+
+/* Badge and title fade in from the top */
+.welcome-badge,
+.welcome-content h2 {
+    transform: translateY(-30px);
+}
+
+/* Paragraphs and signature fade in */
+.welcome-content p,
+.speaker-signature {
+    transform: translateY(20px);
+}
+
+/* When section becomes visible */
+.welcome-address.show .speaker-image,
+.welcome-address.show .welcome-content,
+.welcome-address.show .welcome-badge,
+.welcome-address.show .welcome-content h2,
+.welcome-address.show .welcome-content p,
+.welcome-address.show .speaker-signature {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+
 /*--------------------------------- Executive Section Styles -------------------------------*/
 .container-excos {
   max-width: 1200px;
@@ -3970,6 +4023,45 @@ label {
     margin: 0 5px;
   }
 }
+
+/* Initially hide elements */
+.excos-title,
+.excos-sub-title,
+.our-team {
+    opacity: 9;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Title slides in from the top */
+.excos-title {
+    transform: translateY(-50px);
+}
+
+/* Subtitle slides in from the bottom */
+.excos-sub-title {
+    transform: translateY(50px);
+}
+
+/* Executive Cards Flip Down */
+.our-team {
+    transform: rotateX(-90deg);
+    transform-origin: top;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When section becomes visible */
+.container-excos.show .excos-title,
+.container-excos.show .excos-sub-title,
+.container-excos.show .our-team {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Flip effect for executive cards */
+.container-excos.show .our-team {
+    transform: rotateX(0);
+}
+
 
 /*---------------- News Feeds Instagram & Twitter  -------------------*/
 /* Instagram Feed Section */
@@ -4222,86 +4314,53 @@ label {
     }
 }
 
-/*-------------------- Memory and Moments --------------------------------*/
-/* /.gallery-block{
-  padding-bottom: 60px;
-  padding-top: 60px;
+/* Initially hide events */
+.event {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.9);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.gallery-block .heading{
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.gallery-block .heading h2{
-    font-weight: bold;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-}
-
-.gallery-block.compact-gallery .item{
-  overflow: hidden;
-  margin-bottom: 0;
-  background: black;
-  opacity: 1;
-}
-
-.gallery-block.compact-gallery .item .image{
-  transition: 0.8s ease;
-}
-
-.gallery-block.compact-gallery .item .info{
-  position: relative;
-  display: inline-block;
-}
-
-.gallery-block.compact-gallery .item .description{
-    display: grid;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    color: #fff;
-    padding: 10px;
-    font-size: 17px;
-    line-height: 18px;
-    width: 100%;
-    padding-top: 15px;
-    padding-bottom: 15px;
+/* When events become visible */
+.event.show {
     opacity: 1;
-    color: #fff;
-    transition: 0.8s ease;
-    text-align: center;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.39));
+    transform: translateX(0) scale(1);
 }
 
-.gallery-block.compact-gallery .item .description .description-heading{
-  font-size: 1em;
-  font-weight: bold;
+/* Title and Subtitle Animation */
+.events-title,
+.events-subtitle {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.gallery-block.compact-gallery .item .description .description-body{
-  font-size: 0.8em;
-  margin-top: 10px;
-  font-weight: 300;
+.events-section.show .events-title,
+.events-section.show .events-subtitle {
+    opacity: 1;
+    transform: translateX(0);
 }
 
-@media (min-width: 576px) {
+/* Event Image Zoom on Hover */
+.event:hover .event-image img {
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+}
 
-  .gallery-block.compact-gallery .item .description {
-    opacity: 0; 
-  }
+/* Event Card Hover Lift */
+.event:hover {
+    transform: translateY(-5px) scale(1.02);
+    transition: transform 0.3s ease-in-out;
+}
 
-  .gallery-block.compact-gallery .item a:hover .description {
-    opacity: 1; 
-  } 
+/* Keyframes for rolling-out effect */
+@keyframes rollOut {
+    0% { opacity: 0; transform: translateX(-100px) scale(0.9); }
+    100% { opacity: 1; transform: translateX(0) scale(1); }
+}
 
-  .gallery-block .zoom-on-hover:hover .image {
-    transform: scale(1.3);
-    opacity: 0.7; 
-  }
 
-} */
+/*-------------------- Memory and Moments --------------------------------*/
 .gallery-block{
   padding-bottom: 60px;
   padding-top: 60px;
@@ -4409,6 +4468,75 @@ label {
   opacity: 1;
 }
 
+/* ---------------- Memory & Moments: Smooth Scroll Animations ---------------- */
+
+/* Initially hide gallery items */
+.gallery-block .item {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* When items become visible */
+.gallery-block .item.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Image Zoom-in on Scroll */
+.gallery-block .image {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Reveal effect */
+.gallery-block .item.show .image {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Description Slide-up Animation */
+.gallery-block .description {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.gallery-block .item.show .description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fancy title animation */
+.gallery-block .heading h2 {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.gallery-block .heading.show h2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover Zoom & Shine Effect */
+.gallery-block .item:hover .image {
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-block .item:hover .description {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Keyframes for fade-in zoom */
+@keyframes fadeInZoom {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
 
 /*--------------------- Newsletter CSS -------------------------*/
 .newsletter-section {
@@ -4468,3 +4596,203 @@ label {
       width: 100%;
     }
   }
+
+  /*-------------------------Hero Contact pages ---------------------*/
+.hero-container {
+    background-color: whitesmoke !important;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 30px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Start slightly below */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  .hero-shd-title a:hover{
+    color:#ff9c3e;
+  }
+
+/* Speaker Card Styles */
+.speaker-card {
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.speaker-card .card-img-container {
+  position: relative;
+  height: 320px; /* Fixed height for all speaker images */
+  overflow: hidden;
+}
+
+.speaker-card .card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio and cover container */
+  object-position: top center; /* Center the image and focus on top (faces) */
+  transition: transform 0.5s ease;
+}
+
+.speaker-card:hover .card-img-container img {
+  transform: scale(1.05);
+}
+
+  /* H2 moves in from the right */
+  .hero-hd-title {
+      color: #087418;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      opacity: 0;
+      transform: translateX(100px); /* Move from right */
+      transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  /* P moves in from the left */
+  .hero-shd-title {
+      color: #087418;
+      text-align: center;
+      font-size: 1.3rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      opacity: 0;
+      transform: translateX(-100px); /* Move from left */
+      transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  /* When section is visible, apply animation */
+  .hero-container.show {
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+  .hero-hd-title.show {
+      opacity: 1;
+      transform: translateX(0);
+  }
+
+  .hero-shd-title.show {
+      opacity: 1;
+      transform: translateX(0);
+  }
+
+  /* Enhanced Speaker Cards Styles */
+  .speaker-card {
+      position: relative;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  .speaker-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  }
+  
+  .speaker-number {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background-color: #087418;
+      color: white;
+      font-weight: bold;
+      padding: 5px 12px;
+      border-radius: 20px;
+      z-index: 2;
+      font-size: 16px;
+  }
+  
+  .speaker-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 20px 15px 10px;
+      transition: all 0.3s ease;
+  }
+  
+  .speaker-overlay.current {
+      background: linear-gradient(to top, rgba(8, 116, 24, 0.8), transparent);
+  }
+  
+  .speaker-period {
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+  }
+  
+  .ts-team-content {
+      padding: 25px 20px;
+      background-color: #f8f9fa;
+      border-bottom: 3px solid #087418;
+  }
+  
+  .current-speaker .ts-team-content {
+      background-color: #f0f7f1;
+      border-bottom: 3px solid #ff9c3e;
+  }
+  
+  .ts-name {
+      margin-bottom: 5px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #222;
+  }
+  
+  .ts-designation {
+      font-size: 16px;
+      color: #087418;
+      font-weight: 600;
+      margin-bottom: 15px;
+  }
+  
+  .current-badge {
+      display: inline-block;
+      background-color: #ff9c3e;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-left: 8px;
+      vertical-align: middle;
+  }
+  
+  .ts-description {
+      margin-bottom: 15px;
+      color: #555;
+      line-height: 1.6;
+  }
+  
+  .team-social-icons a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-color: #f1f1f1;
+      text-align: center;
+      line-height: 35px;
+      margin-right: 8px;
+      color: #555;
+      transition: all 0.3s ease;
+  }
+  
+  .team-social-icons a:hover {
+      background-color: #087418;
+      color: white;
+  }
+  
+  .current-speaker .team-social-icons a:hover {
+      background-color: #ff9c3e;
+  }
+

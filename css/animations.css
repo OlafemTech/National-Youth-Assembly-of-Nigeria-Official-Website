@@ -1,0 +1,66 @@
+/* Animation styles for NYAN website */
+
+/* Common animation properties */
+.ts-service-box,
+.gallery-block .item,
+.gallery-block .heading,
+.our-team,
+.event,
+.footer {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Show animation class */
+.ts-service-box.show,
+.gallery-block .item.show,
+.gallery-block .heading.show,
+.our-team.show,
+.event.show,
+.footer.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animations */
+.our-team:nth-child(1) { transition-delay: 0.1s; }
+.our-team:nth-child(2) { transition-delay: 0.3s; }
+.our-team:nth-child(3) { transition-delay: 0.5s; }
+.our-team:nth-child(4) { transition-delay: 0.7s; }
+
+.event:nth-child(1) { transition-delay: 0.1s; }
+.event:nth-child(2) { transition-delay: 0.2s; }
+.event:nth-child(3) { transition-delay: 0.3s; }
+.event:nth-child(4) { transition-delay: 0.4s; }
+.event:nth-child(5) { transition-delay: 0.5s; }
+.event:nth-child(6) { transition-delay: 0.6s; }
+.event:nth-child(7) { transition-delay: 0.7s; }
+
+/* Zoom animation for gallery items */
+.zoom-on-hover {
+  overflow: hidden;
+  position: relative;
+}
+
+.zoom-on-hover img {
+  transition: transform 0.5s ease;
+}
+
+.zoom-on-hover:hover img {
+  transform: scale(1.1);
+}
+
+/* Fallback for browsers that don't support IntersectionObserver */
+@media (prefers-reduced-motion: reduce) {
+  .ts-service-box,
+  .gallery-block .item,
+  .gallery-block .heading,
+  .our-team,
+  .event,
+  .footer {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+  }
+}
